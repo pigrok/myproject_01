@@ -40,7 +40,7 @@ fetch(API_URL, options)
         `;
 
       movieCard.appendChild(movieAdd);
-    });
+    }); 
   });
 
 // 검색 기능 : https://www.youtube.com/watch?v=ZFUOC-y4i0s

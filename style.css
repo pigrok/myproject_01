@@ -48,7 +48,7 @@ h2 {
     grid-auto-flow: dense;
     }
 
-.image {
+.image { 
     width: 180px;
     border-radius: 5px;
 }

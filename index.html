@@ -1,29 +1,27 @@
-   <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>영화콜렉션</title>
-
-    <link rel="stylesheet" href="/style.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
-
+    <link rel="stylesheet" href="style/style.css">
+    <title>영화 검색 및 리뷰</title>
+    <script src="src/main.js" type="module"></script>
 </head>
 
 <body>
-    <h1>최고평점 영화 콜렉션</h1>
-
-    <div class="top-section">
-    <h2>영화검색</h2>
-    <input type="text" id="search-input" onkeyup="enterkey()" placeholder="영화 제목을 검색해 보세요"></input> 
-    <!-- input에 넣으면 글 입력시 바로 작동 onkeyup="search()" -->
-    <button onclick="search()" type="submit" id="search-btn">검색</button>
-    </div>
-
-    <div class="movie-list" id="movie-list">
-    <div class="cards" id="movie-card"></div>
-    <script src="/main.js"></script>
-    </div>
+    <header>
+        <h1>현재 상영 중인 영화 콜렉션</h1>
+    </header>
+    <form id="search-form">
+        <label>영화 검색 : </label>
+        <input name="searchValue" type="text" id="search-input" placeholder="영화 제목을 검색해 보세요" />
+        <button type="submit" id="search-btn">검색</button>
+    </form>
+    <section class="card-section">
+        <ul id="card-list"></ul>
+    </section>
 </body>
+
 </html>

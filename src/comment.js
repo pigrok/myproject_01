@@ -47,7 +47,7 @@
 
     const deleteBtn = document.createElement("button");
     deleteBtn.innerText = "삭제";
-    deleteBtn.addEventListener("click", deleteComment);
+    deleteBtn.addEventListener(removeCheck(), deleteComment);
 
     commentLi.appendChild(name);
     commentLi.appendChild(comment);
@@ -97,3 +97,11 @@
 
 // filter 함수는 반드시 true를 리턴함
 // filter 함수를 사용해 false 요소를 감추고 true 요소만 가지고 array 생성 : 삭제 기능을 만들 수 있음
+
+function removeCheck() {
+ if (confirm("정말 삭제하시겠습니까??") == true){    //확인
+     document.removefrm.submit();
+ }else{   //취소
+     return false;
+ }
+}

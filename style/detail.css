@@ -31,10 +31,15 @@ span {
 #name {
     background-color: yellow;
     padding: 5px 0px;
+    display: inline-block;
     width: 100px;
+    margin: 0 5px;
   }
 
 #comment {
     background-color: green;
     padding: 5px 0px;
+    display: inline-block;
+    width: 300px;
+     margin: 0 5px;
   }

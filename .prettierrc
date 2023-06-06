@@ -16,8 +16,6 @@
   "vueIndentScriptAndStyle": true, 
   "parser": "", 
   "filepath": "", 
-  "rangeStart": 0, 
-  "rangeEnd": Infinity, 
   "requirePragma": false, 
   "insertPragma": false, 
   "overrides": [ 
@@ -27,5 +25,5 @@
         "printWidth": 200
       }
     }
-  ], 
+  ]
 }

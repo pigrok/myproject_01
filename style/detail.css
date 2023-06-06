@@ -1,0 +1,9 @@
+@import "reset.css";
+
+ul, li {
+    list-style : none;
+}
+
+#name {
+    font-size: 100px;
+}

@@ -1,4 +1,6 @@
 @import "variable.css";
+@import "reset.css";
+@import "detail.css";
 
   * {
     box-sizing: border-box;

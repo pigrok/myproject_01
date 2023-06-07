@@ -1,5 +1,6 @@
-import {generateMovieCards} from "./movie.js";
-import {handleSearch} from "./search.js";
+
+import { generateMovieCards } from "./movie.js";
+import { handleSearch } from "./search.js";
 
 generateMovieCards();
 

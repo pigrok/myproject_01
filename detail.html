@@ -4,23 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style/style.css">
     <title>Document</title>
+    <link rel="stylesheet" href="style/style.css">
+    <script src="src/detail.js" type="module"></script>
 </head>
 <body>
-    <div id="trailer-section">
-        <h1>Trailer</h1>
-        <div class="youtube"></div>
-    </div>
-
-    <div class="container">
-
-
-
-
-
-
-
     <form id="comment-form">
         <div>
             <input id="input-name" type="text" placeholder="이름" required />
@@ -31,18 +19,12 @@
         <div>
             <input id="input-comment" type="text" placeholder="리뷰를 작성해주세요" required />
         </div>
-            <select id="input-rate">
-                <option selected>별점</option>
-                <option value="⭐">⭐</option>
-                <option value="⭐⭐">⭐⭐</option>
-                <option value="⭐⭐⭐">⭐⭐⭐</option>
-                <option value="⭐⭐⭐⭐">⭐⭐⭐⭐</option>
-                <option value="⭐⭐⭐⭐⭐">⭐⭐⭐⭐⭐</option>
-            </select>
         <button type="submit">저장</button>
     </form>
+    <div class="comment-list">
+        <ul id="comment-list"></ul>
+    </div>
 
-    <ul id="comment-list">
     </ul>
     <script src="/src/comment.js"></script>
     <script src="/src/trailer.js"></script>

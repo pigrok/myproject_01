@@ -21,12 +21,17 @@
   // 3. 리스트 삭제 버튼
   function deleteComment(event) {
     const deleteLi = event.target.parentNode;
+        if (confirm("정말 삭제하시겠습니까??") == true) {
     deleteLi.remove();
     comments = comments.filter(comment => comment.id !== parsint(deleteLi.id));
     // 첫 번째 id는 number, 두 번째 id는 string 이라서 처음에 작동이 안됨
     // parsint를 이용해 문자를 숫자로 바꿔줌
     saveComments();
+        } else {
+          return false;
+        }
   }
+
 
   // 2. html 파일에 리스트 추가
   function displayComment(newComment) {
@@ -98,10 +103,3 @@
 // filter 함수는 반드시 true를 리턴함
 // filter 함수를 사용해 false 요소를 감추고 true 요소만 가지고 array 생성 : 삭제 기능을 만들 수 있음
 
-function removeCheck() {
- if (confirm("정말 삭제하시겠습니까??") == true){    //확인
-     document.removefrm.submit();
- }else{   //취소
-     return false;
- }
-}

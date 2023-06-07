@@ -2,6 +2,7 @@ const commentForm = document.getElementById("comment-form");
 const inputName = commentForm.querySelector("#input-name");
 const inputPwd = commentForm.querySelector("#input-pwd");
 const inputComment = commentForm.querySelector("#input-comment");
+const inputRate = commentForm.querySelector("#input-rate");
 const commentList = document.getElementById("comment-list");
 
 const COMMENT_KEY = "comments";
@@ -20,9 +21,9 @@ function saveComments() {
 
 // 3. 리스트 삭제 버튼
 function deleteComment(event) {
-    const deleteLi = event.target.parentNode;
+    const deleteLi = event.target.parentElement;
     deleteLi.remove();
-    comments = comments.filter(comment => comment.id !== parsInt(deleteLi.id));
+    comments = comments.filter((comment) => comment.id !== parseInt(deleteLi.id));
     // 첫 번째 id는 number, 두 번째 id는 string 이라서 처음에 작동이 안됨
     // parsInt를 이용해 문자를 숫자로 바꿔줌
     saveComments();
@@ -45,13 +46,19 @@ function displayComment(newComment) {
     comment.innerText = newComment.comment;
     comment.id = "comment";
 
+    const rate = document.createElement("Span");
+    rate.innerText = newComment.rate;
+    rate.id = "rate";
+
     const deleteBtn = document.createElement("button");
     deleteBtn.innerText = "삭제";
     deleteBtn.addEventListener("click", deleteComment);
 
     commentLi.appendChild(name);
     commentLi.appendChild(comment);
+    commentLi.appendChild(rate);
     commentLi.appendChild(deleteBtn);
+
     commentList.appendChild(commentLi);
 }
 
@@ -62,15 +69,19 @@ function handleCommentSubmit(event) {
     const newComment = inputComment.value;
     const newName = inputName.value;
     const newPwd = inputPwd.value;
+    const newRate = inputRate.value;
 
     inputComment.value = "";
     inputName.value = "";
-    inputPwd.value = ""; // 작성 후 input 값 공란으로 변경
+    inputPwd.value = "";
+    inputRate.value = "";
+     // 작성 후 input 값 공란으로 변경
 
     const newCommentObj = {
         name: newName,
         pwd: newPwd,
         comment: newComment,
+        rate: newRate,
         id: Date.now(),
     };
 
@@ -92,8 +103,8 @@ if (savedComments !== null) {
     const parsedComments = JSON.parse(savedComments);
     comments = parsedComments; // 이전에 저장한 정보를 가져와서 새로고침해도 정보가 남아있도록 함
     parsedComments.forEach(displayComment);
-
 }
+
 
 // filter 함수는 반드시 true를 리턴함
 // filter 함수를 사용해 false 요소를 감추고 true 요소만 가지고 array 생성 : 삭제 기능을 만들 수 있음

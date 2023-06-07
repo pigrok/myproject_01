@@ -22,9 +22,11 @@ export const generateMovieCards = async () => {
     }
   };
   cardList.addEventListener("click", handleClickCard);
+
+  return movies;
 };
 
-const fetchMovieData = async () => {
+export const fetchMovieData = async () => {
   const options = {
     method: "GET",
     headers: {

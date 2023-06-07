@@ -7,6 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/style.css">
     <title>영화 검색 및 리뷰</title>
+    <script
+    src="https://kit.fontawesome.com/50eb116aa5.js"
+    crossorigin="anonymous">
+    </script>
     <script src="src/main.js" type="module"></script>
 </head>
 
@@ -19,9 +23,20 @@
         <input name="searchValue" type="text" id="search-input" placeholder="영화 제목을 검색해 보세요" />
         <button type="submit" id="search-btn">검색</button>
     </form>
+    <nav id="nav-sorting">
+      <ul id="sorting-btns">
+        <li><button id="btn-sort-by-title">제목 순</button></li>
+        <li><button id="btn-sort-by-date">개봉일 순</button></li>
+        <li><button id="btn-sort-by-rating">평점 순</button></li>
+        <li>
+          <button id="btn-sort-reset">
+            <i class="fa-solid fa-rotate-left"></i>
+          </button>
+        </li>
+        </ul>
+      </nav>
     <section class="card-section">
         <ul id="card-list"></ul>
     </section>
 </body>
-
 </html>

@@ -27,9 +27,9 @@ span {
     align-items: center;
     justify-content: center;
 
-    color: white;
+    color: black;
     background-color: white;
-    width: 800px;
+    width: 1000px;
     height: 500px;
     padding: 20px;
     border: 2px solid black;
@@ -38,16 +38,32 @@ span {
     margin-bottom: 20px;
 }
 
-#name {
-    color:black;
-    /* background-color: yellow; */
+#movieName {
     padding: 5px 0px;
     display: inline-block;
     width: 100px;
   }
 
-#comment {
-    color: black;
-    /* background-color: green; */
+
+#name {
     padding: 5px 0px;
-  }
+    width: 100px;
+    margin-left: 50px;
+}
+
+
+#name {
+    padding: 5px 0px;
+    width: 100px;
+    margin-left: 50px;
+}
+
+#comment {
+    padding: 5px 0px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+button {
+    margin: 10px;
+}

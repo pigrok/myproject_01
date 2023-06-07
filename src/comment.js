@@ -1,4 +1,5 @@
 const commentForm = document.getElementById("comment-form");
+const inputMovieName = commentForm.querySelector("#input-movieName");
 const inputName = commentForm.querySelector("#input-name");
 const inputPwd = commentForm.querySelector("#input-pwd");
 const inputComment = commentForm.querySelector("#input-comment");
@@ -19,7 +20,7 @@ function saveComments() {
     localStorage.setItem(COMMENT_KEY, JSON.stringify(comments));
 }
 
-// 3. 리스트 삭제 버튼
+// 댓글 delete
 function deleteComment(event) {
     const deleteLi = event.target.parentElement;
     deleteLi.remove();
@@ -28,12 +29,35 @@ function deleteComment(event) {
     // parsInt를 이용해 문자를 숫자로 바꿔줌
     saveComments();
 }
+// 댓글 edit
+function editComment(event) {
+    const editLi = event.target.parentElement;
+    const commentId = parseInt(editLi.id);
+
+    const comment = comments.find((comment) => comment.id === commentId);
+    if (comment) {
+        inputMovieName.value = comment.movieName;
+        inputName.value = comment.name;
+        inputPwd.value = comment.pwd;
+        inputComment.value = comment.comment;
+        inputRate.value = comment.rate;
+
+        comments = comments.filter((comment) => comment.id !== commentId);
+        editLi.remove();
+        saveComments();
+    }
+}
+
 
 // 2. html 파일에 리스트 추가
 function displayComment(newComment) {
 
     const commentLi = document.createElement("Li");
     commentLi.id = newComment.id; // 리스트에 고유 값을 지정하기 위해 id를 추가함
+
+    const movieName = document.createElement("Span");
+    movieName.innerText = newComment.movieName;
+    movieName.id = "movieName";
 
     const name = document.createElement("Span");
     name.innerText = newComment.name;
@@ -52,13 +76,19 @@ function displayComment(newComment) {
     rate.id = "rate";
   
     const deleteBtn = document.createElement("button");
-    deleteBtn.innerText = "삭제";
+    deleteBtn.innerText = "Delete";
     deleteBtn.addEventListener("click", deleteComment);
 
+    const editBtn = document.createElement("button");
+    editBtn.innerText = "Edit";
+    editBtn.addEventListener("click", editComment);
+
+    commentLi.appendChild(movieName);    
     commentLi.appendChild(name);
     commentLi.appendChild(comment);
     commentLi.appendChild(rate);
     commentLi.appendChild(deleteBtn);
+    commentLi.appendChild(editBtn);
 
     commentList.appendChild(commentLi);
 }
@@ -67,18 +97,21 @@ function displayComment(newComment) {
 function handleCommentSubmit(event) {
     event.preventDefault(); // 새로고침 제거
 
-    const newComment = inputComment.value;
+    const newMovieName = inputMovieName.value;
     const newName = inputName.value;
     const newPwd = inputPwd.value;
+    const newComment = inputComment.value;
     const newRate = inputRate.value;
 
-    inputComment.value = "";
+    inputMovieName.value = "";
     inputName.value = "";
     inputPwd.value = "";
+    inputComment.value = "";
     inputRate.value = "";
-     // 작성 후 input 값 공란으로 변경
+    // 작성 후 input 값 공란으로 변경
 
     const newCommentObj = {
+        movieName: newMovieName,
         name: newName,
         pwd: newPwd,
         comment: newComment,

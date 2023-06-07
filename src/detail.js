@@ -1,19 +1,49 @@
-import {fetchMovieData} from "./movie.js";
-
-const getMo = async () => {
-  const movies = await fetchMovieData();
-  console.log(movies); // movies 배열 출력 또는 원하는 작업 수행
-};
-
 const getIdFromUrl = () => {
   const url = window.location.href;
   const id = url.match(/id=(\d{6})/)?.[1];
-  console.log(id);
+  console.log(id)
+  return id;
 };
 
-const init = () => {
-  getMo();
-  getIdFromUrl();
+const getMovieDetails = async () => {
+  const options = {
+    method: "GET",
+    headers: {
+      accept: "application/json",
+      Authorization:
+        "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1NjZmYTE3MGI2YTI5ZTY2NjNhMjBiZWVmMTM0ZGJlNSIsInN1YiI6IjY0NzA4ZmE3NzI2ZmIxMDE0NGU2MTU4MiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.WjMDg4jW2jKFKA7ASX32W7RWlkt6KKmrcmF6_Bn_fic",
+    },
+  };
+
+  const API_URL_BY_ID = `https://api.themoviedb.org/3/movie/${getIdFromUrl()}?language=ko-KO`;
+
+  const response = await fetch(API_URL_BY_ID, options);
+  const data = await response.json();
+  console.log(data);
+  return data.results;
 };
 
-init();
+const getMovieCredits = async () => {
+  const options = {
+    method: "GET",
+    headers: {
+      accept: "application/json",
+      Authorization:
+        "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1NjZmYTE3MGI2YTI5ZTY2NjNhMjBiZWVmMTM0ZGJlNSIsInN1YiI6IjY0NzA4ZmE3NzI2ZmIxMDE0NGU2MTU4MiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.WjMDg4jW2jKFKA7ASX32W7RWlkt6KKmrcmF6_Bn_fic",
+    },
+  };
+
+  const API_URL_BY_ID = `https://api.themoviedb.org/3/movie/447365/credits?language=ko-KO`;
+
+  const response = await fetch(API_URL_BY_ID, options);
+  const data = await response.json();
+  console.log(data);
+  return data.results;
+}
+
+const getThisMovieInfo = () => {
+  getMovieDetails();
+  getMovieCredits();
+}
+
+getThisMovieInfo();

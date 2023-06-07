@@ -51,6 +51,7 @@ function editComment(event) {
 
 // 2. html 파일에 리스트 추가
 function displayComment(newComment) {
+
     const commentLi = document.createElement("Li");
     commentLi.id = newComment.id; // 리스트에 고유 값을 지정하기 위해 id를 추가함
 
@@ -73,7 +74,7 @@ function displayComment(newComment) {
     const rate = document.createElement("Span");
     rate.innerText = newComment.rate;
     rate.id = "rate";
-
+  
     const deleteBtn = document.createElement("button");
     deleteBtn.innerText = "Delete";
     deleteBtn.addEventListener("click", deleteComment);
@@ -121,23 +122,21 @@ function handleCommentSubmit(event) {
     comments.push(newCommentObj); // push로 array에 배열 추가
     displayComment(newCommentObj);
     saveComments();
-}
+  }
 
-commentForm.addEventListener("submit", handleCommentSubmit);
+  commentForm.addEventListener("submit", handleCommentSubmit);
 
-// 6. sting을 array로 바꾸기
-// JSON.parse("[1, 2, 3, 4]")
-// > [1, 2, 3, 4] : string을 array 로 바꿔줌
+  // 6. sting을 array로 바꾸기
+  // JSON.parse("[1, 2, 3, 4]")
+  // > [1, 2, 3, 4] : string을 array 로 바꿔줌
 
-// 7. array를 local storage에 저장하기
-// 삭제 후 새로고침 했을 때 local storage의 정보가 다시 불러와지는 문제가 발생
-const savedComments = localStorage.getItem(COMMENT_KEY);
-if (savedComments !== null) {
+  // 7. array를 local storage에 저장하기
+  // 삭제 후 새로고침 했을 때 local storage의 정보가 다시 불러와지는 문제가 발생
+  const savedComments = localStorage.getItem(COMMENT_KEY);
+  if (savedComments !== null) {
     const parsedComments = JSON.parse(savedComments);
     comments = parsedComments; // 이전에 저장한 정보를 가져와서 새로고침해도 정보가 남아있도록 함
     parsedComments.forEach(displayComment);
-}
 
+  }
 
-// filter 함수는 반드시 true를 리턴함
-// filter 함수를 사용해 false 요소를 감추고 true 요소만 가지고 array 생성 : 삭제 기능을 만들 수 있음

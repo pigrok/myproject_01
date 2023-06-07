@@ -1,6 +1,6 @@
+
 import { generateMovieCards } from "./movie.js";
 import { handleSearch } from "./search.js";
-
 
 generateMovieCards();
 

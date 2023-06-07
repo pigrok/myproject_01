@@ -25,7 +25,6 @@ function saveComments() {
 // 3. 리스트 삭제 버튼
 function deleteComment(event) {
   const deleteLi = event.target.parentElement;
-  
     if (confirm("정말 삭제하시겠습니까??") == true) {
   deleteLi.remove();
   comments = comments.filter(comment => comment.id !== parseInt(deleteLi.id));

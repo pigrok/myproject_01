@@ -1,4 +1,6 @@
 @import "variable.css";
+@import "reset.css";
+@import "detail.css";
 
   * {
     box-sizing: border-box;
@@ -7,7 +9,6 @@
   }
   
   body {
-    background: url("../assets/bg.png") center/cover no-repeat;
     min-height: 100vh;
   }
   

@@ -1,8 +1,7 @@
 export const generateMovieCards = async () => {
   const movies = await fetchMovieData();
 
-
-  const IMG_URL = `https://image.tmdb.org/t/p/w500`
+  const IMG_URL = `https://image.tmdb.org/t/p/w500`;
 
   const cardList = document.querySelector("#card-list");
   cardList.innerHTML = movies
@@ -40,7 +39,7 @@ export const fetchMovieData = async () => {
     },
   };
 
-  const API_URL = `https://api.themoviedb.org/3/movie/now_playing?language=ko-KO&page=1`
+  const API_URL = `https://api.themoviedb.org/3/movie/now_playing?language=ko-KO&page=1`;
 
   const response = await fetch(API_URL, options);
   const data = await response.json();

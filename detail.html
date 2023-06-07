@@ -15,6 +15,7 @@
         <div id="current-movie-credit">
             <p id="director"></p>
             <p id="casting"></p>
+        <div id="movie-trailer"></div>
         </div>
     </section>
     <form id="comment-form">
@@ -27,7 +28,17 @@
         <div>
             <input id="input-comment" type="text" placeholder="리뷰를 작성해주세요" required />
         </div>
-        <button type="submit">저장</button>
+        <div class="input-group mb-3">
+            <select class="select" id="input-rate">
+                <option value="">-- Choose --</option>
+                <option value="⭐">⭐</option>
+                <option value="⭐⭐">⭐⭐</option>
+                <option value="⭐⭐⭐">⭐⭐⭐</option>
+                <option value="⭐⭐⭐⭐">⭐⭐⭐⭐</option>
+                <option value="⭐⭐⭐⭐⭐">⭐⭐⭐⭐⭐</option>
+            </select>
+        </div>
+        <button class="comment-btn" type="submit">저장</button>
     </form>
     <div class="comment-list">
         <ul id="comment-list"></ul>
@@ -35,7 +46,5 @@
 
     </ul>
     <script src="/src/comment.js"></script>
-    <script src="/src/trailer.js"></script>
 </body>
 </html>
-

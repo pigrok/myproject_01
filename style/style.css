@@ -9,7 +9,6 @@
   }
   
   body {
-    background: url("../assets/bg.png") center/cover no-repeat;
     min-height: 100vh;
   }
   
@@ -44,9 +43,17 @@
   
   #card-list {
     display: grid;
+    place-items: center;
     grid-template-columns: repeat(4, auto);
     list-style: none;
   }
+
+  @media (max-width : 1200px) {
+    #card-list {
+    grid-template-columns: repeat(3, auto);
+  }
+  }
+
   .card-section {
     width: 70%;
     margin: 0 auto;

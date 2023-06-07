@@ -9,7 +9,7 @@ export const generateMovieCards = async () => {
     .map(
       movie => `
             <li class="movie-card" id=${movie.id}>
-                <img src=${IMG_URL}${movie.poster_path} alt="${movie.title}">
+                <img src="${IMG_URL}${movie.poster_path}" alt="${movie.title}">
 
                 <h3 class="movie-title">${movie.title}</h3>
                 <p>개봉일: ${movie.release_date}</p>

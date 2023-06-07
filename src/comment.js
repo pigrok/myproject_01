@@ -6,55 +6,67 @@ const inputRate = commentForm.querySelector("#input-rate");
 
 const commentList = document.getElementById("comment-list");
 const COMMENT_KEY = "comments";
+
+
 // 4. local storage 저장하기
 // Local storage에는 array 저장 x, 텍스트만 저장 가능
 // array가 업데이트 되어야 하므로 let 사용
 let comments = [];
 // 5. 자료를 string으로 바꾸기
+
+
 // JSON.stringify([1, 2, 3, 4])
 // > "[1, 2, 3, 4]" : string 으로 바꿔줌
 function saveComments() {
   localStorage.setItem(COMMENT_KEY, JSON.stringify(comments));
 }
+
+
 // 3. 리스트 삭제 버튼
 function deleteComment(event) {
   const deleteLi = event.target.parentElement;
+  
+    if (confirm("정말 삭제하시겠습니까??") == true) {
   deleteLi.remove();
   comments = comments.filter(comment => comment.id !== parseInt(deleteLi.id));
   // 첫 번째 id는 number, 두 번째 id는 string 이라서 처음에 작동이 안됨
   // parsInt를 이용해 문자를 숫자로 바꿔줌
   saveComments();
+    } else {
+      return false;
+    }
 }
+
+
 // 2. html 파일에 리스트 추가
 function displayComment(newComment) {
   const commentLi = document.createElement("Li");
   commentLi.id = newComment.id; // 리스트에 고유 값을 지정하기 위해 id를 추가함
-
   const name = document.createElement("Span");
   name.innerText = newComment.name;
   name.id = "name";
-
   const pwd = document.createElement("Span");
   pwd.innerText = newComment.pwd;
   pwd.id = "pwd";
-
   const comment = document.createElement("Span");
   comment.innerText = newComment.comment;
   comment.id = "comment";
-
   const rate = document.createElement("Span");
   rate.innerText = newComment.rate;
   rate.id = "rate";
-
   const deleteBtn = document.createElement("button");
   deleteBtn.innerText = "삭제";
+  deleteBtn.id = "deleteBtn"
+
   deleteBtn.addEventListener("click", deleteComment);
   commentLi.appendChild(name);
   commentLi.appendChild(comment);
-    commentLi.appendChild(rate);
+  commentLi.appendChild(rate);
   commentLi.appendChild(deleteBtn);
   commentList.appendChild(commentLi);
 }
+
+
 // 1. input 창 설정
 function handleCommentSubmit(event) {
   event.preventDefault(); // 새로고침 제거
@@ -80,6 +92,8 @@ function handleCommentSubmit(event) {
   saveComments();
 }
 commentForm.addEventListener("submit", handleCommentSubmit);
+
+
 // 6. sting을 array로 바꾸기
 // JSON.parse("[1, 2, 3, 4]")
 // > [1, 2, 3, 4] : string을 array 로 바꿔줌
@@ -94,12 +108,4 @@ if (savedComments !== null) {
 // filter 함수는 반드시 true를 리턴함
 // filter 함수를 사용해 false 요소를 감추고 true 요소만 가지고 array 생성 : 삭제 기능을 만들 수 있음
 
-// function removeCheck() {
-//   if (confirm("정말 삭제하시겠습니까??") == true) {
-//     //확인
-//     document.removefrm.submit();
-//   } else {
-//     //취소
-//     return false;
-//   }
-// }
+

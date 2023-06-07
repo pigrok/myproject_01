@@ -38,31 +38,37 @@ span {
 }
 
 #name {
-    background-color: yellow;
     padding: 5px 0px;
     display: inline-block;
     width: 100px;
     font-size: 12px;
     margin: 0 5px;
     text-align: center;
+    border-bottom: 1px solid black;
   }
 
 #comment {
-    background-color: green;
     padding: 5px 0px;
     display: inline-block;
     width: 300px;
     font-size: 12px;
     margin: 0 5px;
     text-align: center;
+    border-bottom: 1px solid black;
   }
 
   #rate {
-    background-color: orange;
     padding: 5px 0px;
     display: inline-block;
     width: 90px;
     font-size: 12px;
     margin: 0 5px;
     text-align: center;
+
+  }
+
+  #deleteBtn {
+    width: 50px;
+    margin: 5px 5px;
+    font-size: 12px;
   }

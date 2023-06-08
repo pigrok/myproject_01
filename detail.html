@@ -5,18 +5,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-signin-client_id" content="873817326302-r4oj20vu78go03uhmgb2vpa3hih636gq.apps.googleusercontent.com">
     <title>Document</title>
     <link rel="stylesheet" href="style/style.css">
     <script src="https://kit.fontawesome.com/50eb116aa5.js" crossorigin="anonymous"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
 </head>
 
 <body>
     <header>
-        <nav class="header-sticky-nav">
-            <ul class="header-nav-list">
-                <li class="header-nav-home-btn"></li>
-            </ul>
-        </nav>
+        <section>
+            <div class="nav-body">
+              <div class="navigation">
+                <a href="/index.html"><img src="/assets/5isting.png"></a>
+                <span class="g-signin2" data-onsuccess="onSignIn"></span>
+              </div>
+            </div>
+        </section>
     </header>
 
     <section class="box" id="details-container">
@@ -76,6 +81,8 @@
     <script src="/src/detail.js"></script>
     <script src="/src/comment.js"></script>
     <script src="/src/topbtn.js"></script>
+    <script src="/src/google.js"></script>
+    <script src="/src/login.js"></script>
 </body>
 
 </html>

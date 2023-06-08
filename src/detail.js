@@ -22,9 +22,9 @@ const showMovieDetails = async () => {
 
   document.title = detail.title;
 
-  const genres = detail.genres.map(genres => genres.name);
-  const director = credits.crew.find(person => person.job === "Director");
-  const casting = credits.cast.slice(0, 4).map(person => person.name);
+  const genres = detail.genres.map((genres) => genres.name);
+  const director = credits.crew.find((person) => person.job === "Director");
+  const casting = credits.cast.slice(0, 4).map((person) => person.name);
 
   const detailsContainer = document.querySelector("#details-container");
   const currentMoviePoster = detailsContainer.querySelector(

@@ -1,6 +1,6 @@
 function checkLoginStatus() {
-  var loginBtn = document.querySelector("#loginBtn");
-  var nameTxt = document.querySelector("#name");
+  const loginBtn = document.querySelector("#loginBtn");
+  const nameTxt = document.querySelector("#name");
   if (gauth.isSignedIn.get()) {
     console.log("logined");
     loginBtn.value = "Logout";

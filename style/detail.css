@@ -1,78 +1,14 @@
-#comment-form {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    padding: 50px 0 10px 0;
-}
+
 
 span {
     font-size: 16px;
 }
 
-#comment-form div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;}
 
-#comment-form input {
-    margin: 0 5px;
-    text-align: center;
-}
 
-#comment-form select {
-    margin: 0 5px;
-
-}
-
-#input-rate > option:nth-child(1) {
-    text-align: center;
-}
-
-#comment-list {
-    /* display: flex; */
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    color: black;
-    background-color: white;
-    width: 1000px;
-    height: 500px;
-    padding: 20px;
-    border: 2px solid black;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 20px;
-}
-
-<<<<<<< HEAD
-#name {
-    background-color: yellow;
-=======
 #movieName {
->>>>>>> master
-    padding: 5px 0px;
-    display: inline-block;
-    width: 100px;
-    margin: 0 5px;
-  }
-
-<<<<<<< HEAD
-#comment {
-    background-color: green;
-    padding: 5px 0px;
-    display: inline-block;
-    width: 300px;
-     margin: 0 5px;
-  }
-=======
-
-#name {
     padding: 5px 0px;
     width: 100px;
-    margin-left: 50px;
 }
 
 
@@ -91,11 +27,6 @@ span {
 button {
     margin: 10px;
 }
-<<<<<<< HEAD
->>>>>>> master
-=======
-<<<<<<< HEAD
-=======
 
 #video-container {
     height: 800px;
@@ -158,5 +89,3 @@ body {
 #current-movie-overview {
     line-height: 50px;
 }
->>>>>>> 08756c78e528349a02e029559e1cdcde802f9fad
->>>>>>> master

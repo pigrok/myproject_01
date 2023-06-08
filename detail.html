@@ -10,10 +10,14 @@
 </head>
 
 <body>
-    <section class="box">
-        <h3 class="box-title">Trailer</h3>
-        <div id="video-container"></div>
-    </section>
+    <header>
+        <nav class="header-sticky-nav">
+            <ul class="header-nav-list">
+                <li class="header-nav-home-btn"></li>
+            </ul>
+        </nav>
+    </header>
+
     <section class="box" id="details-container">
         <h3 class="box-title">Detail</h3>
         <div class="box-info">
@@ -26,11 +30,15 @@
                     <p id="casting"></p>
                 </div>
                 <div>
-                    <p>영화 설명:</p>
+                    <p class="overview-title">줄거리:</p>
                     <p id="current-movie-overview"></p>
                 </div>
             </div>
         </div>
+    </section>
+    <section class="trailer-box">
+        <h3 class="box-title">Trailer</h3>
+        <div id="video-container"></div>
     </section>
 
     <form id="comment-form">

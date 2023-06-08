@@ -1,14 +1,42 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style/style.css">
     <title>Document</title>
+    <link rel="stylesheet" href="style/style.css">
 </head>
+
 <body>
+    <section class="box">
+        <h3 class="box-title">Trailer</h3>
+        <div id="video-container"></div>
+    </section>
+    <section class="box" id="details-container">
+        <h3 class="box-title">Detail</h3>
+        <div class="box-info">
+            <div id="current-movie-poster"></div>
+            <div class="box-detail">
+                <h1 id="current-movie-title"></h1>
+                <p id="current-movie-genre"></p>
+                <div id="current-movie-credit">
+                    <p id="director"></p>
+                    <p id="casting"></p>
+                </div>
+                <div>
+                    <p>영화 설명:</p>
+                    <p id="current-movie-overview"></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <form id="comment-form">
+        <div>
+            <input id="input-movieName" type="text" placeholder="영화 제목" required />
+        </div>
         <div>
             <input id="input-name" type="text" placeholder="이름" required />
         </div>
@@ -18,11 +46,23 @@
         <div>
             <input id="input-comment" type="text" placeholder="리뷰를 작성해주세요" required />
         </div>
-        <button type="submit">저장</button>
+        <div class="input-group mb-3">
+            <select class="select" id="input-rate">
+                <option value="">--- 별점 선택 ---</option>
+                <option value="⭐">⭐</option>
+                <option value="⭐⭐">⭐⭐</option>
+                <option value="⭐⭐⭐">⭐⭐⭐</option>
+                <option value="⭐⭐⭐⭐">⭐⭐⭐⭐</option>
+                <option value="⭐⭐⭐⭐⭐">⭐⭐⭐⭐⭐</option>
+            </select>
+        </div>
+        <button class="comment-btn" type="submit">저장</button>
     </form>
-
-    <ul id="comment-list">
-    </ul>
+    <div class="comment-list">
+        <ul id="comment-list"></ul>
+    </div>
+    <script src="src/detail.js"></script>
     <script src="/src/comment.js"></script>
 </body>
+
 </html>

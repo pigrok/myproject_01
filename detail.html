@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,18 +8,31 @@
     <title>Document</title>
     <link rel="stylesheet" href="style/style.css">
 </head>
+
 <body>
-    <div id="video-container"></div>
-    <section id="details-container">
-        <div id="current-movie-poster"></div>
-        <h1 id="current-movie-title"></h1>
-        <p id="current-movie-genre"></p>
-        <div id="current-movie-credit">
-            <p id="director"></p>
-            <p id="casting"></p>
-        </div>
-        <p id="current-movie-overview"></p>
+    <section class="box">
+        <h3 class="box-title">Trailer</h3>
+        <div id="video-container"></div>
     </section>
+    <section class="box" id="details-container">
+        <h3 class="box-title">Detail</h3>
+        <div class="box-info">
+            <div id="current-movie-poster"></div>
+            <div class="box-detail">
+                <h1 id="current-movie-title"></h1>
+                <p id="current-movie-genre"></p>
+                <div id="current-movie-credit">
+                    <p id="director"></p>
+                    <p id="casting"></p>
+                </div>
+                <div>
+                    <p>영화 설명:</p>
+                    <p id="current-movie-overview"></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <form id="comment-form">
         <div>
             <input id="input-movieName" type="text" placeholder="영화 제목" required />
@@ -50,4 +64,5 @@
     <script src="src/detail.js"></script>
     <script src="/src/comment.js"></script>
 </body>
+
 </html>

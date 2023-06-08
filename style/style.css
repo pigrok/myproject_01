@@ -1,6 +1,7 @@
 @import "variable.css";
 @import "reset.css";
 @import "detail.css";
+@import "card.css";
 
   * {
     box-sizing: border-box;
@@ -41,46 +42,4 @@
     padding: 5px;
   }
   
-  #card-list {
-    display: grid;
-    place-items: center;
-    grid-template-columns: repeat(4, auto);
-    list-style: none;
-  }
-
-  @media (max-width : 1200px) {
-    #card-list {
-    grid-template-columns: repeat(3, auto);
-  }
-  }
-
-  .card-section {
-    width: 70%;
-    margin: 0 auto;
-  }
-  .movie-card {
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.12), 0 3px 6px rgba(0, 0, 0, 0.24);
-    margin: 20px;
-    padding: 20px;
-    width: 300px;
-    justify-self: center;
-    background-color: var(--bg-card-color);
-    border-radius: 10px;
-    cursor: pointer;
-    user-select: none;
-    transition: transform 100ms ease-in;
-  }
-  
-  .movie-card:hover {
-    transform: scale(1.02);
-  }
-  
-  .movie-card img {
-    width: 100%;
-    min-height: 390px;
-    border-radius: 10px;
-  }
-  
-  .movie-card .movie-title {
-    margin-bottom: 10px;
-  }
+ 

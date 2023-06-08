@@ -1,7 +1,7 @@
 const CURRENT_URL = window.location.href;
 const CURRENT_ID = CURRENT_URL.match(/id=(\d+)/)?.[1];
 
-const IMG_URL = `https://image.tmdb.org/t/p/w500/`;
+const IMG_URL = `https://image.tmdb.org/t/p/w400/`;
 
 // playMovieTrailer - 가져온 영화 관련 영상들 중 Trailer 영상을 찾아서 페이지에 구현
 const playMovieTrailer = async () => {
@@ -22,9 +22,9 @@ const showMovieDetails = async () => {
 
   document.title = detail.title;
 
-  const genres = detail.genres.map(genres => genres.name);
-  const director = credits.crew.find(person => person.job === "Director");
-  const casting = credits.cast.slice(0, 4).map(person => person.name);
+  const genres = detail.genres.map((genres) => genres.name);
+  const director = credits.crew.find((person) => person.job === "Director");
+  const casting = credits.cast.slice(0, 4).map((person) => person.name);
 
   const detailsContainer = document.querySelector("#details-container");
   const currentMoviePoster = detailsContainer.querySelector(

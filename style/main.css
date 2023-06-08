@@ -38,6 +38,44 @@ h1 {
   gap: 20px; /* 수정: 카드 사이 간격 추가 */
 }
 
+/* 카드 정렬 버튼 */
+#nav-sorting {
+  display: flex;
+  justify-content: center;
+  margin-top: 3vh;
+  margin-bottom: 1vh;
+}
+#sorting-btns {
+  text-align: center;
+}
+#sorting-btns li {
+  display: inline-block;
+}
+#sorting-btns button {
+  padding: 25px;
+  border: none;
+  background-color: transparent;
+  color: var(--main-font-color);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  font-family: 'BMJUA';
+  font-size: 2em;
+}
+#sorting-btns button:hover {
+  color: var(--main-font-color);
+  font-weight: 700;
+  text-decoration: underline;
+  transform: translateY(-7px);
+}
+
+
+/* 영화 카드 섹션 */
+#card-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  list-style: none;
+}
+
 .card-section {
   width: 70%;
   margin: 0 auto;
@@ -69,7 +107,6 @@ h1 {
 .movie-card .movie-title {
   margin-bottom: 10px;
 }
-
 .movie-info {
   display: none;
   position: fixed;

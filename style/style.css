@@ -6,7 +6,6 @@
 @import "login.css";
 @import "detail.css";
 
-
 body {
   min-height: 100vh;
   background-color: var(--main-bg-color);
@@ -14,10 +13,24 @@ body {
   font-family: 'BMJUA';
 }
 
-header {
-  background-color: var(--bg-header-color);
-  height: 100px;
+.top-btn {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 50;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: var(--main-text-color);
+  background-color: #ffffff34;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 2px 2px 6px var(--shadow-color);
+  transition: 0.3s ease-in-out;
+}
+.top-btn:hover {
+  background-color: #ffffff9a;
 }

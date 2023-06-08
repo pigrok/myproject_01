@@ -1,8 +1,9 @@
 const CURRENT_URL = window.location.href;
 const CURRENT_ID = CURRENT_URL.match(/id=(\d+)/)?.[1];
-console.log(CURRENT_ID);
-const IMG_URL = `https://image.tmdb.org/t/p/w400/`;
 
+const IMG_URL = `https://image.tmdb.org/t/p/w500/`;
+
+// playMovieTrailer - 가져온 영화 관련 영상들 중 Trailer 영상을 찾아서 페이지에 구현
 const playMovieTrailer = async () => {
   const videos = await getMovieVideos();
 
@@ -10,7 +11,6 @@ const playMovieTrailer = async () => {
     (video) => video.type === "Trailer",
   );
   const YOUTUBE_KEY = findTrailerVideo.key;
-  console.log(YOUTUBE_KEY);
 
   const videoContainer = document.getElementById("video-container");
   videoContainer.innerHTML = `<iframe  frameborder="0" allowfullscreen="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" title="${document.title}" width="100%" height="100%" src="https://www.youtube.com/embed/${YOUTUBE_KEY}?autoplay=1&amp;mute=1&amp;controls=1&amp;origin=https%3A%2F%2Fnomadcoders.co&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;iv_load_policy=3&amp;modestbranding=1&amp;cc_lang_pref=ko&amp;cc_load_policy=1&amp;enablejsapi=1&amp;widgetid=1" id="widget2"></iframe>`;
@@ -43,13 +43,15 @@ const showMovieDetails = async () => {
   );
 
   currentMoviePoster.innerHTML = `<img src="${IMG_URL}${detail.poster_path}" alt="Movie Poster">`;
-  currentMovieTitle.innerHTML = ` ${detail.title}`;
-  currentMovieGenre.innerHTML = `장르 : ${genres.join(", ")}`;
-  currentMovieDirector.innerHTML = `감독 : ${director.name}`;
-  currentMovieCasting.innerHTML = `출연 : ${casting.join(", ")}`;
+  currentMovieTitle.innerHTML = `${detail.title}`;
+  currentMovieGenre.innerHTML = `장르: ${genres.join(", ")}`;
+  currentMovieDirector.innerHTML = `감독: ${director.name}`;
+  currentMovieCasting.innerHTML = `출연: ${casting.join(", ")}`;
   currentMovieOverView.innerHTML = `${detail.overview}`;
 };
 
+// API 데이터 GET
+// 1. getMovieDetails - 영화 상세정보(장르, 제목 등)
 const getMovieDetails = async () => {
   const options = {
     method: "GET",
@@ -68,6 +70,7 @@ const getMovieDetails = async () => {
   return data;
 };
 
+// 2. getMovieCredits - 영화 크레딧 정보(출연 배우, 감독 등)
 const getMovieCredits = async () => {
   const options = {
     method: "GET",
@@ -86,6 +89,7 @@ const getMovieCredits = async () => {
   return data;
 };
 
+// 3. GetMovieVideos - 영화 관련 유튜브 영상
 const getMovieVideos = async () => {
   const options = {
     method: "GET",

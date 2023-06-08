@@ -8,14 +8,14 @@ export const generateMovieCards = async () => {
   cardList.innerHTML = movies
     .map(
       (movie) => `
-            <li class="movie-card" id=${movie.id}>
-                <img src="${IMG_URL}${movie.poster_path}" alt="${movie.title}">
-                <div class="movie-info">
-                   <h3>${movie.title}</h3>
-                   <p class="rating">평점: ${movie.vote_average}</p>
-                   <p class="release-date">개봉일: ${movie.release_date}</p>
-               </div>
-            </li>`,
+              <li class="movie-card" id=${movie.id}>
+              <img src="${IMG_URL}${movie.poster_path}" alt="${movie.title}">
+              <div class="movie-info">                
+                <h3 id="movie-title">${movie.title}</h3>
+                <p id="movie-rating" class="rating">평점: ${movie.vote_average}</p>
+                <p id="movie-date" class="release-date">개봉일: ${movie.release_date}</p>
+              </div>
+              </li>`,
     )
     .join("");
 
@@ -70,5 +70,3 @@ export const fetchMovieData = async () => {
   const data = await response.json();
   return data.results;
 };
-
-const sliders = document.querySelector(".card-section");

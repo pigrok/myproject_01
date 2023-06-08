@@ -6,7 +6,6 @@
 @import "login.css";
 @import "detail.css";
 
-
 body {
   min-height: 100vh;
   background-color: var(--main-bg-color);

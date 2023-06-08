@@ -7,13 +7,13 @@ const playMovieTrailer = async () => {
   const videos = await getMovieVideos();
 
   const findTrailerVideo = videos.results.find(
-    video => video.type === "Trailer",
+    (video) => video.type === "Trailer",
   );
   const YOUTUBE_KEY = findTrailerVideo.key;
   console.log(YOUTUBE_KEY);
 
   const videoContainer = document.getElementById("video-container");
-  videoContainer.innerHTML = `<iframe frameborder="0" allowfullscreen="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" title="${document.title}" width="100%" height="100%" src="https://www.youtube.com/embed/${YOUTUBE_KEY}?autoplay=0&amp;mute=0&amp;controls=1&amp;origin=https%3A%2F%2Fnomadcoders.co&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;iv_load_policy=3&amp;modestbranding=1&amp;cc_lang_pref=ko&amp;cc_load_policy=1&amp;enablejsapi=1&amp;widgetid=1" id="widget2"></iframe>`;
+  videoContainer.innerHTML = `<iframe  frameborder="0" allowfullscreen="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" title="${document.title}" width="100%" height="100%" src="https://www.youtube.com/embed/${YOUTUBE_KEY}?autoplay=0&amp;mute=0&amp;controls=1&amp;origin=https%3A%2F%2Fnomadcoders.co&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;iv_load_policy=3&amp;modestbranding=1&amp;cc_lang_pref=ko&amp;cc_load_policy=1&amp;enablejsapi=1&amp;widgetid=1" id="widget2"></iframe>`;
 };
 
 const showMovieDetails = async () => {
@@ -43,7 +43,7 @@ const showMovieDetails = async () => {
   );
 
   currentMoviePoster.innerHTML = `<img src="${IMG_URL}${detail.poster_path}" alt="Movie Poster">`;
-  currentMovieTitle.innerHTML = `${detail.title}`;
+  currentMovieTitle.innerHTML = `제목: ${detail.title}`;
   currentMovieGenre.innerHTML = `장르: ${genres.join(", ")}`;
   currentMovieDirector.innerHTML = `감독: ${director.name}`;
   currentMovieCasting.innerHTML = `출연: ${casting.join(", ")}`;

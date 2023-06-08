@@ -24,17 +24,18 @@ function saveComments() {
 function deleteComment(event) {
   const deleteLi = event.target.parentElement;
   deleteLi.remove();
-  comments = comments.filter(comment => comment.id !== parseInt(deleteLi.id));
+  comments = comments.filter((comment) => comment.id !== parseInt(deleteLi.id));
   // 첫 번째 id는 number, 두 번째 id는 string 이라서 처음에 작동이 안됨
   // parsInt를 이용해 문자를 숫자로 바꿔줌
   saveComments();
 }
+
 // 댓글 edit
 function editComment(event) {
   const editLi = event.target.parentElement;
   const commentId = parseInt(editLi.id);
 
-  const comment = comments.find(comment => comment.id === commentId);
+  const comment = comments.find((comment) => comment.id === commentId);
   if (comment) {
     inputMovieName.value = comment.movieName;
     inputName.value = comment.name;
@@ -42,7 +43,7 @@ function editComment(event) {
     inputComment.value = comment.comment;
     inputRate.value = comment.rate;
 
-    comments = comments.filter(comment => comment.id !== commentId);
+    comments = comments.filter((comment) => comment.id !== commentId);
     editLi.remove();
     saveComments();
   }
@@ -136,3 +137,6 @@ if (savedComments !== null) {
   comments = parsedComments; // 이전에 저장한 정보를 가져와서 새로고침해도 정보가 남아있도록 함
   parsedComments.forEach(displayComment);
 }
+
+// filter 함수는 반드시 true를 리턴함
+// filter 함수를 사용해 false 요소를 감추고 true 요소만 가지고 array 생성 : 삭제 기능을 만들 수 있음

@@ -85,8 +85,8 @@ function displayComment(newComment) {
   editBtn.id = "list-btn";
 
   commentLi.appendChild(movieName);
-  commentLi.appendChild(name);
   commentLi.appendChild(comment);
+  commentLi.appendChild(name);
   commentLi.appendChild(rate);
   commentLi.appendChild(deleteBtn);
   commentLi.appendChild(editBtn);

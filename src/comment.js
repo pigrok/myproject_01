@@ -77,10 +77,12 @@ function displayComment(newComment) {
   const deleteBtn = document.createElement("button");
   deleteBtn.innerText = "Delete";
   deleteBtn.addEventListener("click", deleteComment);
+  deleteBtn.id = "list-btn";
 
   const editBtn = document.createElement("button");
   editBtn.innerText = "Edit";
   editBtn.addEventListener("click", editComment);
+  editBtn.id = "list-btn";
 
   commentLi.appendChild(movieName);
   commentLi.appendChild(name);

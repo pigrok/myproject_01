@@ -5,10 +5,95 @@
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 70vh;
+  align-items: flex-start;
 }
 
+
 h1 {
-  font-size: 70px;
+  font-size: 47px;
+  align-self: flex-start;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-left: 88px;
+}
+
+h4 {
+  align-self: flex-start;
+  margin-top: 0;
+  margin-bottom: auto;
+  margin-left: 88px;
+  color: rgb(119, 119, 124);
+}
+
+.search-button {
+  font-family: 'BMJUA';
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  /* margin-left: -20px; */
+  background-color: #036CF9;
+  color: white;
+  border: none;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  cursor: pointer;
+  width: 120px;
+  height: 50px;
+  padding: 8px 44px 8px 44px;
+  max-width: 260px;
+  transform: none;
+  transition: all 0.2s ease 0s;
+  outline: rgb(249, 249, 249);
+  box-sizing: border-box;
+  font-size: 18px;
+  letter-spacing: 1px;
+  line-height: 18px;
+  text-align: center;
+  text-transform: uppercase;
+  word-spacing: 0px;
+  text-decoration: none solid rgb(249, 249n, 249);
+  background-position: 0% 0%;
+  color: #F9F9F9;
+}
+
+
+
+.search-button:hover {
+  background-color:rgb(21, 176, 237)
+}
+
+.search-button:focus {
+  outline: none;
+}
+
+.search-text {
+  font-family: 'BMJUA';
+  font-size: 20px;
+  text-decoration: none solid rgb(192, 192, 192);
+  word-spacing: 0px;
+  background-color: #31343E;
+  background-position: 0% 0%;
+  color: #C0C0C0;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  height: 50px;
+  width: 450px;
+  border: 1px solid #31343E;
+  padding: 0 12px 0 12px;
+  display: inline-block;
+  cursor: text;
+  transform: none;
+  transition: all 0s ease 0s;
+  box-sizing: border-box;
+  margin-bottom: 100px;
+  margin-left: 85px;
+}
+.header-imge {
+  width: 180px;
+  height: 98px;
+  align-self: flex-start;
+  margin-left: 88px;
+  margin-top: 110px;
 }
 
 #search-form {

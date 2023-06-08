@@ -3,7 +3,7 @@ const cardList = document.querySelector("#card-list");
 export const generateMovieCards = async () => {
   const movies = await fetchMovieData();
 
-  const IMG_URL = `https://image.tmdb.org/t/p/w500`;
+  const IMG_URL = `https://image.tmdb.org/t/p/w400`;
 
   cardList.innerHTML = movies
     .map(

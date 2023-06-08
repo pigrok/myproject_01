@@ -5,6 +5,8 @@
 @import "main.css";
 @import "login.css";
 @import "detail.css";
+@import "card.css";
+@import "comment.css";
 
 body {
   min-height: 100vh;

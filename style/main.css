@@ -9,7 +9,7 @@
 }
 
 
-h1 {
+.sub-title {
   font-size: 47px;
   align-self: flex-start;
   margin-top: 30px;
@@ -17,10 +17,8 @@ h1 {
   margin-left: 88px;
 }
 
-h4 {
+.search-title {
   align-self: flex-start;
-  margin-top: 0;
-  margin-bottom: auto;
   margin-left: 88px;
   color: rgb(119, 119, 124);
 }
@@ -88,7 +86,7 @@ h4 {
   margin-bottom: 100px;
   margin-left: 85px;
 }
-.header-imge {
+.header-image {
   width: 180px;
   height: 98px;
   align-self: flex-start;
@@ -118,50 +116,32 @@ h4 {
 
 #card-list {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 수정: "auto" 대신 "1fr"로 변경 */
+  place-content: center;
+  /* grid-template-columns: 1fr 1fr 1fr 1fr; */
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   list-style: none;
-  gap: 20px; /* 수정: 카드 사이 간격 추가 */
+  gap : 10px;
 }
 
-/* 카드 정렬 버튼 */
-#nav-sorting {
-  display: flex;
-  justify-content: center;
-  margin-top: 3vh;
-  margin-bottom: 1vh;
+@media (max-width : 1800px) and (min-width: 1350px) {
+  #card-list {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
-#sorting-btns {
-  text-align: center;
-}
-#sorting-btns li {
-  display: inline-block;
-}
-#sorting-btns button {
-  padding: 25px;
-  border: none;
-  background-color: transparent;
-  color: var(--main-font-color);
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
-  font-family: 'BMJUA';
-  font-size: 2em;
-}
-#sorting-btns button:hover {
-  color: var(--main-font-color);
-  font-weight: 700;
-  text-decoration: underline;
-  transform: translateY(-7px);
 }
 
-
-/* 영화 카드 섹션 */
-#card-list {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  list-style: none;
+@media (max-width : 1350px) and (min-width: 900px) {
+  #card-list {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
 }
 
-.card-section {
+@media (max-width : 900px)  {
+  #card-list {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+}
+
+#card-section {
   width: 70%;
   margin: 0 auto;
 }
@@ -192,6 +172,7 @@ h4 {
 .movie-card .movie-title {
   margin-bottom: 10px;
 }
+
 .movie-info {
   display: none;
   position: fixed;
@@ -216,4 +197,27 @@ h4 {
   text-align: center;
   justify-content: center;
   flex-direction: column;
+}
+
+#sorting-btns {
+  text-align: center;
+}
+#sorting-btns li {
+  display: inline-block;
+}
+#sorting-btns button {
+  padding: 25px;
+  border: none;
+  background-color: transparent;
+  color: var(--main-font-color);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  font-family: 'BMJUA';
+  font-size: 2em;
+}
+#sorting-btns button:hover {
+  color: var(--main-font-color);
+  font-weight: 700;
+  text-decoration: underline;
+  transform: translateY(-7px);
 }

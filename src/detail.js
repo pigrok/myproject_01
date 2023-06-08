@@ -8,11 +8,12 @@ const playMovieTrailer = async () => {
   const videos = await getMovieVideos();
 
   const findTrailerVideo = videos.results.find(
-    (video) => video.type === "Trailer");
+    (video) => video.type === "Trailer",
+  );
   const YOUTUBE_KEY = findTrailerVideo.key;
 
-  const videoPlayer = document.getElementById("video-container");
-  videoPlayer.innerHTML = `<iframe frameborder="0" allowfullscreen="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" title="trailer" width="100%" height="100%" src="https://www.youtube.com/embed/${YOUTUBE_KEY}?autoplay=1&amp;mute=0&amp;controls=1&amp;origin=https%3A%2F%2Fnomadcoders.co&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;iv_load_policy=3&amp;modestbranding=1&amp;cc_lang_pref=ko&amp;cc_load_policy=1&amp;enablejsapi=1&amp;widgetid=1" id="widget2"></iframe>`;
+  const videoContainer = document.getElementById("video-container");
+  videoContainer.innerHTML = `<iframe  frameborder="0" allowfullscreen="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" title="${document.title}" width="100%" height="100%" src="https://www.youtube.com/embed/${YOUTUBE_KEY}?autoplay=1&amp;mute=1&amp;controls=1&amp;origin=https%3A%2F%2Fnomadcoders.co&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;iv_load_policy=3&amp;modestbranding=1&amp;cc_lang_pref=ko&amp;cc_load_policy=1&amp;enablejsapi=1&amp;widgetid=1" id="widget2"></iframe>`;
 };
 
 const showMovieDetails = async () => {
@@ -48,7 +49,6 @@ const showMovieDetails = async () => {
   currentMovieCasting.innerHTML = `출연: ${casting.join(", ")}`;
   currentMovieOverView.innerHTML = `${detail.overview}`;
 };
-
 
 // API 데이터 GET
 // 1. getMovieDetails - 영화 상세정보(장르, 제목 등)

@@ -11,9 +11,9 @@ export const generateMovieCards = async () => {
             <li class="movie-card" id=${movie.id}>
                 <img src="${IMG_URL}${movie.poster_path}" alt="${movie.title}">
 
-                <h3 class="movie-title">${movie.title}</h3>
-                <p>개봉일: ${movie.release_date}</p>
-                <p>평점: ${movie.vote_average}</p>
+                <h3 id="movie-title">${movie.title}</h3>
+                <p id="movie-date">개봉일: ${movie.release_date}</p>
+                <p id="movie-rating">평점: ${movie.vote_average}</p>
             </li>`,
     )
     .join("");
@@ -22,6 +22,7 @@ export const generateMovieCards = async () => {
     const targetCard = event.target.closest(".movie-card");
     if (targetCard) {
       const movieId = targetCard.id;
+      // 나중에 창 열리는 옵션 _self로 바꾸기
       window.open(`detail.html?id=${movieId}`, "_blank");
     }
   };

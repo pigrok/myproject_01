@@ -1,0 +1,202 @@
+#comment-form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 0 10px 0;
+    /* background-color: aqua; */
+}
+
+#comment-form div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#comment-form input {
+    font-family: "BMJUA";
+    display: inline-block;
+    margin: 0 10px;
+    text-align: center;
+    background-color: #00ff0000;
+    color: white;
+    height: 30px;
+    border: 1px solid gray;
+    padding: 0;
+}
+
+#input-rate {
+    font-family: "BMJUA";
+    display: inline-block;
+    margin: 0 10px;
+    text-align: center;
+    background-color: #00ff0000;
+    color: gray;
+    height: 32px;
+    border: 1px solid gray; 
+    width: 150px;
+}
+
+.comment-btn {
+    font-family: "BMJUA";
+    display: inline-block;
+    background-color: #036cf9;
+    color: white;
+    border-radius: 5px;
+    font-size: 14px;
+    padding: 8px 20px;
+}
+.comment-btn:hover {
+    opacity: 0.7;
+}
+
+
+#comment-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+    background-color: #00ff0000;
+    margin: 30px 20px 150px 20px;
+}
+
+#comment-list li {
+    border-bottom: 1px solid white;
+    margin-bottom: 5px;
+}
+
+
+#movieName {
+    padding: 5px 0px;
+    display: inline-block;
+    width: 100px;
+    font-size: 22px;
+    margin: 0 5px;
+?
+    padding: 5px 0px;
+    width: 200px;
+    /* background-color: paleturquoise; */
+}
+
+
+#name {
+    padding: 5px 0px;
+    display: inline-block;
+    width: 120px;
+    font-size: 22px;
+    margin: 0 5px;
+    text-align: center;
+    /* background-color: palevioletred; */
+}
+
+#comment {
+    padding: 5px 0px;
+    display: inline-block;
+    width: 500px;
+    font-size: 22px;
+    margin: 0 5px;
+    text-align: center;
+    /* background-color: yellowgreen; */
+}
+
+  #rate {
+    padding: 5px 0px;
+    display: inline-block;
+    width: 140px;
+    font-size: 20px;
+    margin: 0 5px;
+    text-align: center;
+    /* background-color: gray; */
+  }
+
+#list-btn {
+    font-family: "BMJUA";
+    background-color: #00ff0000;
+    border: 0.5px solid white;
+    color: white;
+    border-radius: 5px;
+    font-size: 16px;
+    padding: 3px 20px;
+}
+
+#list-btn:hover {
+    opacity: 0.7;
+}
+
+
+
+  @media (max-width : 1250px) and (min-width: 960px) {
+        #comment-form input {
+            /* background-color:aqua; */
+            margin: 0 5px;
+            font-size: 12px;
+            height: 30px;
+        }
+
+        #input-rate {
+            margin: 0 5px;
+            font-size: 12px;
+    }
+
+        #movieName {
+            width: 100px;
+            font-size: 18px;
+            /* background-color: paleturquoise; */
+  }
+
+        #name {
+            width: 120px;
+            font-size: 18px;
+            /* background-color: palevioletred; */
+        }
+
+        #comment {
+            width: 350px;
+            font-size: 18px;
+            /* background-color: yellowgreen; */
+        }
+
+        #rate {
+            width: 140px;
+            font-size: 18px;
+            /* background-color: gray; */
+        }
+  }
+
+    @media (max-width : 960px)  {
+        #comment-form input {
+            background-color:aqua;
+            margin: 0 5px;
+            font-size: 12px;
+            height: 30px;
+        }
+
+        #input-rate {
+            margin: 0 5px;
+            font-size: 12px;
+    }
+
+        #movieName {
+            width: 100px;
+            font-size: 18px;
+  }
+
+        #name {
+            width: 120px;
+            font-size: 18px;
+        }
+
+        #comment {
+            width: 350px;
+            font-size: 18px;
+            margin-top: 10px;
+        }
+
+        #rate {
+            width: 140px;
+            font-size: 18px;
+        }
+  }

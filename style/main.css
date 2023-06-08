@@ -1,31 +1,19 @@
-@import "reset.css";
-@import "variable.css";
-@import "fonts.css";
-
-@import "main.css";
-@import "login.css";
-@import "detail.css";
-
-
-body {
-  min-height: 100vh;
-  background-color: var(--main-bg-color);
-  color: var(--main-font-color);
-  font-family: 'BMJUA';
+.search-section {
+  display: flex;
+  flex-direction: column;
+  background-image: url("/assets/original.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 70vh;
 }
 
-header {
-  background-color: var(--bg-header-color);
-  height: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+h1 {
+  font-size: 70px;
 }
 
 #search-form {
   text-align: center;
   padding: 20px 0;
-  border-bottom: 1px solid black;
 }
 
 #search-form label {
@@ -80,3 +68,4 @@ header {
 .movie-card .movie-title {
   margin-bottom: 10px;
 }
+ 

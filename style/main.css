@@ -425,8 +425,11 @@ h4 {
 
 .g-signin2 {
   margin-top: 8px;
-  background-color: transparent;
-  transition: opacity 0.3;
+}
+
+
+.g-signin2 div {
+  background-color: transparent !important;
 }
 
 .nav-body {
@@ -444,4 +447,3 @@ h4 {
   background: url(/assets/original.png);
   background-size: cover;
 }
-

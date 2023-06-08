@@ -1,45 +1,15 @@
-@import "variable.css";
 @import "reset.css";
+@import "variable.css";
+@import "fonts.css";
+
+@import "main.css";
+@import "login.css";
 @import "detail.css";
 @import "card.css";
 
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  
-  body {
-    min-height: 100vh;
-  }
-  
-  header {
-    background-color: var(--bg-header-color);
-    height: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  #search-form {
-    text-align: center;
-    padding: 20px 0;
-    border-bottom: 1px solid black;
-  }
-  
-  #search-form label {
-    font-size: 25px;
-  }
-  
-  #search-form input {
-    margin-left: 20px;
-    min-width: 200px;
-    padding: 5px 10px;
-  }
-  
-  #search-form button {
-    margin-left: 10px;
-    padding: 5px;
-  }
-  
- 
+
+body {
+  background-color: var(--main-bg-color);
+  color: var(--main-font-color);
+  font-family: 'BMJUA';
+}

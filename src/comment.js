@@ -23,11 +23,15 @@ function saveComments() {
 // 댓글 delete
 function deleteComment(event) {
   const deleteLi = event.target.parentElement;
+  if (confirm("정말 삭제하시겠습니까??") == true){
   deleteLi.remove();
   comments = comments.filter((comment) => comment.id !== parseInt(deleteLi.id));
   // 첫 번째 id는 number, 두 번째 id는 string 이라서 처음에 작동이 안됨
   // parsInt를 이용해 문자를 숫자로 바꿔줌
   saveComments();
+}else{
+  return false;
+}
 }
 
 // 댓글 edit

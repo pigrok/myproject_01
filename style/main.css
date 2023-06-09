@@ -9,6 +9,7 @@
 .search-section {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   background-image: url("/assets/original.png");
   background-repeat: no-repeat;
   background-size: cover;
@@ -90,7 +91,6 @@
   height: 98px;
   align-self: flex-start;
   margin-left: 88px;
-  margin-top: 110px;
 }
 
 #search-form {

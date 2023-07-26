@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-signin-client_id" content="873817326302-r4oj20vu78go03uhmgb2vpa3hih636gq.apps.googleusercontent.com">
+    <title>Document</title>
+    <link rel="stylesheet" href="style/style.css">
+    <script src="https://kit.fontawesome.com/50eb116aa5.js" crossorigin="anonymous"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+</head>
+
+<body>
+    <header>
+        <section>
+            <div class="nav-body">
+              <div class="navigation">
+                <a href="/index.html"><img src="/assets/5isting.png"></a>
+                <span class="g-signin2" data-onsuccess="onSignIn"></span>
+              </div>
+            </div>
+        </section>
+    </header>
+
+    <section class="box" id="details-container">
+        <h3 class="box-title">Detail</h3>
+        <div class="box-info">
+            <div id="current-movie-poster"></div>
+            <div class="box-detail">
+                <h1 id="current-movie-title"></h1>
+                <p id="current-movie-genre"></p>
+                <div id="current-movie-credit">
+                    <p id="director"></p>
+                    <p id="casting"></p>
+                </div>
+                <div>
+                    <p class="overview-title">줄거리:</p>
+                    <p id="current-movie-overview"></p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="trailer-box">
+        <h3 class="box-title">Trailer</h3>
+        <div id="video-container"></div>
+    </section>
+
+    <form id="comment-form">
+        <div>
+            <input id="input-movieName" type="text" placeholder="영화 제목" required />
+        </div>
+        <div>
+            <input id="input-name" type="text" placeholder="이름" required />
+        </div>
+        <div>
+            <input id="input-pwd" type="password" placeholder="비밀번호" required />
+        </div>
+        <div>
+            <input id="input-comment" type="text" placeholder="리뷰를 작성해주세요" required />
+        </div>
+        <div class="input-group mb-3">
+            <select class="select" id="input-rate">
+                <option value="">--- 별점 선택 ---</option>
+                <option value="⭐">⭐</option>
+                <option value="⭐⭐">⭐⭐</option>
+                <option value="⭐⭐⭐">⭐⭐⭐</option>
+                <option value="⭐⭐⭐⭐">⭐⭐⭐⭐</option>
+                <option value="⭐⭐⭐⭐⭐">⭐⭐⭐⭐⭐</option>
+            </select>
+        </div>
+        <button class="comment-btn" type="submit">저장</button>
+    </form>
+    <div class="comment-list">
+        <ul id="comment-list"></ul>
+    </div>
+    <div class="top-btn">
+        <i class="fa-solid fa-angles-up"></i>
+    </div>
+    <script src="/src/detail.js"></script>
+    <script src="/src/comment.js"></script>
+    <script src="/src/topbtn.js"></script>
+    <script src="/src/google.js"></script>
+    <script src="/src/login.js"></script>
+</body>
+
+</html>

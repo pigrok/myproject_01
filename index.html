@@ -1,29 +1,66 @@
-   <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>영화콜렉션</title>
-
-    <link rel="stylesheet" href="/style.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
-
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-signin-client_id"
+    content="873817326302-r4oj20vu78go03uhmgb2vpa3hih636gq.apps.googleusercontent.com">
+  <link rel="stylesheet" href="style/style.css">
+  <title>영화 검색 및 리뷰</title>
+  <script src="https://kit.fontawesome.com/50eb116aa5.js" crossorigin="anonymous"></script>
+  <script src="src/main.js" type="module"></script>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
 </head>
 
 <body>
-    <h1>최고평점 영화 콜렉션</h1>
-
-    <div class="top-section">
-    <h2>영화검색</h2>
-    <input type="text" id="search-input" onkeyup="enterkey()" placeholder="영화 제목을 검색해 보세요"></input> 
-    <!-- input에 넣으면 글 입력시 바로 작동 onkeyup="search()" -->
-    <button onclick="search()" type="submit" id="search-btn">검색</button>
+  <header>
+    <section>
+      <div class="nav-body">
+        <div class="navigation">
+          <a href="/index.html"><img src="/assets/5isting.png"></a>
+          <span class="g-signin2" data-onsuccess="onSignIn"></span>
+        </div>
+      </div>
+    </section>
+  </header>
+  <section class="search-section">
+    <img src="assets/5isting.png" alt="띠용" class="header-image">
+    <h1 class="sub-title">이 모든 이야기가 여기에 <br>
+      지금 스트리밍 중</h1>
+    <h4 class="search-title">원하는 영화를 검색해 보세요!
+    </h4>
+    <form id="search-form">
+      <!-- <label>영화 검색 : </label> -->
+      <input class="search-text" name="searchValue" type="text" id="search-input" placeholder="영화 제목"
+        style="margin-left:85px" />
+      <button class="search-button" type="submit" id="search-btn" style="margin-left: -5px;">검색하기</button>
+    </form>
+  </section>
+  <section class="movie-card-section">
+    <nav id="nav-sorting">
+      <ul id="sorting-btns">
+        <li><button id="btn-sort-by-title">제목 순</button></li>
+        <li><button id="btn-sort-by-date">개봉일 순</button></li>
+        <li><button id="btn-sort-by-rating">평점 순</button></li>
+        <li>
+          <button id="btn-sort-reset">
+            <i class="fa-solid fa-rotate-left"></i>
+          </button>
+        </li>
+      </ul>
+    </nav>
+    <div id="card-section">
+      <ul id="card-list"></ul>
     </div>
-
-    <div class="movie-list" id="movie-list">
-    <div class="cards" id="movie-card"></div>
-    <script src="/main.js"></script>
-    </div>
+  </section>
+  <div class="top-btn">
+    <i class="fa-solid fa-angles-up"></i>
+  </div>
+  <script src="/src/topbtn.js"></script>
+  <script src="/src/google.js"></script>
+  <script src="/src/login.js"></script>
 </body>
+
 </html>
